@@ -1,0 +1,158 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  /* Beautiful Linear Gradient Background */
+  background: linear-gradient(135deg, #ff7eb3, #8e44ad, #2575fc);
+  background-size: 300% 300%;
+  animation: gradientMove 10s ease infinite;
+
+  min-height: 100vh;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Gradient Animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+  width: 100%;
+  max-width: 450px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Calendar Date Area */
+.date-area {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.date-area label {
+  margin-bottom: 5px;
+  color: #444;
+  font-size: 14px;
+}
+
+#datePicker {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Input Area */
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+#addBtn {
+  background: #2575fc;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#addBtn:hover {
+  background: #1a5fd4;
+}
+
+/* Task List */
+#taskList {
+  list-style: none;
+}
+
+li {
+  background: #f1f1f1;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+li.completed span {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* Checkbox + Text */
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-left input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+/* Delete Button */
+.delete-btn {
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+    max-width: 95%;
+  }
+
+  #taskInput {
+    font-size: 14px;
+  }
+
+  #addBtn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
